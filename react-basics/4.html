@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React Basics 4</title>
+    <script src="https://unpkg.com/react@16.13.1/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.13.1/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.9.3/babel.js"></script>
+    <style>
+        .div{
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    const Component = () => {
+        function handler(){
+            alert("handler")
+        }
+
+        return (
+            <div className='div'>
+                <span onClick={handler} style={{color: 'red'}}>Span</span>
+                <input placeholder="input"></input>
+            </div>
+        )
+    }
+
+    const App = () => {
+        return (
+            <Component/>
+        )
+    }
+
+    ReactDOM.render(<App/>, document.getElementById('root'))
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React Basics 2</title>
+    <script src="https://unpkg.com/react@16.13.1/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.13.1/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.9.3/babel.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        ReactDOM.render(React.createElement(App,{}),document.getElementById('root'))
+
+        function App(){
+            return React.createElement(
+                // The type argument must be a valid React component type. or a React component, tag name string (such as 'div' or 'span')
+                'div',
+                // The props argument must either be an object or null.
+                {style: {backgroundColor: 'beige', height: '100vh', width: '100vw'}},
+                //...child[] optional
+                React.createElement('span', {style:{color:'red'}}, 'span'),
+                React.createElement('input',{placeholder: 'input'})
+            )
+        }
+
+    </script>
+</body>
+</html>
